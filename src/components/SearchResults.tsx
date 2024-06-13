@@ -31,7 +31,7 @@ export default async function SearchResults({
                 ),
             )}
           </div>
-          <div className="mt-6 flex items-center justify-center">
+          <div className="my-6 flex items-center justify-center">
             <Link
               href={{
                 query: { q: query, page: parseInt(page) - 1 },
