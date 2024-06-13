@@ -13,14 +13,13 @@ export default function Header() {
           priority
         />
       </div>
-      <div className="relative z-10 flex h-full w-full items-center justify-center gap-10">
+      <div className="relative z-10 flex h-full w-full flex-col items-center justify-center gap-10 md:flex-row">
         <div className="flex h-full max-h-60 w-full max-w-60 items-center justify-center">
           <Image
             src="/svg/cine-list-logo.svg"
             alt="Cine list logo"
             width={150}
             height={150}
-            // style={{ width: "auto", height: "auto" }}
             className="h-full w-full p-1"
             priority
           />
