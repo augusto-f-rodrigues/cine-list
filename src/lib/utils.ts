@@ -25,7 +25,7 @@ export function fullLang(iso: string) {
 }
 
 export function fullDate(date: string) {
-  return new Date(date).toLocaleDateString("en-US", {
+  return new Date(date).toLocaleDateString("pt-BR", {
     dateStyle: "long",
   });
 }

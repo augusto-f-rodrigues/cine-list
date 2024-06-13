@@ -144,7 +144,7 @@ export default function MediaOverview({ media }: Readonly<{ media: Media }>) {
                     <div className="min-w-[120px] font-bold">
                       {detail.title}
                     </div>
-                    <div className="flex flex-wrap gap-2 text-white/70">
+                    <div className="ml-2 flex flex-wrap gap-2 text-white/70">
                       {detail.value}
                     </div>
                   </div>
