@@ -1,7 +1,8 @@
 import Header from "@/components/Header";
-import MediaCarousel from "@/components/MediaCarousel";
-import SearchForm from "@/components/SearchForm";
-import SearchResults from "@/components/SearchResults";
+import MediaCarousel from "@/components/media/MediaCarousel";
+import SearchForm from "@/components/search/SearchForm";
+import SearchResults from "@/components/search/SearchResults";
+
 import { getTrending } from "@/services/api";
 
 export default async function Home({

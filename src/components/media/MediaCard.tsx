@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PiQuestion } from "react-icons/pi";
-import Rating from "./Rating";
+import Rating from "../Rating";
 
 export default function MediaCard({ media }: Readonly<{ media: Media }>) {
   const type = media.name ? "tv" : "movie";

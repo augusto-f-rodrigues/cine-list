@@ -1,4 +1,4 @@
-import MediaOverview from "@/components/MediaOverview";
+import MediaOverview from "@/components/media/MediaOverview";
 import { getMedia } from "@/services/api";
 import Image from "next/image";
 import Link from "next/link";

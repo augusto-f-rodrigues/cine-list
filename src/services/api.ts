@@ -44,3 +44,11 @@ export const getSearch = (
     page,
     language: "pt-BR",
   });
+
+export const getPerson = cache(
+  (id: string): Promise<Person> =>
+    fetchApi(`/person/${id}`, {
+      append_to_response: "combined_credits,images",
+      language: "pt-BR",
+    }),
+);

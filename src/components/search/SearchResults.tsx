@@ -1,6 +1,7 @@
 import { getSearch } from "@/services/api";
-import MediaCard from "./MediaCard";
 import Link from "next/link";
+import PersonCard from "../person/PersonCard";
+import MediaCard from "../media/MediaCard";
 
 export default async function SearchResults({
   query,
@@ -24,11 +25,12 @@ export default async function SearchResults({
           </h1>
 
           <div className="px-global grid grid-cols-[repeat(auto-fill,minmax(10rem,1fr))] gap-2 lg:grid-cols-[repeat(auto-fill,minmax(15rem,1fr))]">
-            {data.results.map(
-              (el) =>
-                el.media_type !== "person" && (
-                  <MediaCard key={el.id} media={el as Media} />
-                ),
+            {data.results.map((item) =>
+              item.media_type === "person" ? (
+                <PersonCard key={item.id} person={item as Person} />
+              ) : (
+                <MediaCard key={item.id} media={item as Media} />
+              ),
             )}
           </div>
           <div className="my-6 flex items-center justify-center">
