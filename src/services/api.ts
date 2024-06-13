@@ -26,3 +26,11 @@ export const getTrending = cache(
       page,
     }),
 );
+
+export const getMedia = cache(
+  (type: MediaType, id: string): Promise<Media> =>
+    fetchApi(`/${type}/${id}`, {
+      append_to_response: "credits,images,videos,recommendations,episodes",
+      language: "pt-BR",
+    }),
+);
