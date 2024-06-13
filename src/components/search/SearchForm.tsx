@@ -22,11 +22,11 @@ export default function SearchForm({ query }: Readonly<{ query?: string }>) {
   };
 
   return (
-    <div className="my-global item relative col-end-1 flex w-full justify-center">
+    <div className="my-global item relative col-end-1 flex w-full justify-center px-4">
       <input
         type="text"
         name="q"
-        className="rounded-full border border-transparent border-b-zinc-700 bg-zinc-800 p-4 text-2xl focus:border focus:border-teal-500 focus:outline-none"
+        className="w-full max-w-96 rounded-full border border-transparent border-b-zinc-700 bg-zinc-800 p-4 text-base focus:border focus:border-teal-500 focus:outline-none"
         placeholder="Buscar..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
@@ -36,10 +36,10 @@ export default function SearchForm({ query }: Readonly<{ query?: string }>) {
       {search && (
         <button
           type="button"
-          className="absolute right-[31rem] top-1/2 -translate-y-1/2 transform"
+          className="mx-2 flex transform items-center justify-center rounded-full bg-orange-500 p-4 hover:bg-orange-400"
           onClick={clearSearch}
         >
-          <PiX className="text-2xl text-zinc-500 transition-colors hover:text-orange-500" />
+          <PiX className="text-white-500 text-2xl" />
         </button>
       )}
     </div>
