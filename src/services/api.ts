@@ -34,3 +34,13 @@ export const getMedia = cache(
       language: "pt-BR",
     }),
 );
+
+export const getSearch = (
+  query: string,
+  page: number | string = 1,
+): Promise<PageResult<Media & Person>> =>
+  fetchApi("/search/multi", {
+    query,
+    page,
+    language: "pt-BR",
+  });

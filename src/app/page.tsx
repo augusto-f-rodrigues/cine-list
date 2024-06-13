@@ -1,18 +1,29 @@
 import Header from "@/components/Header";
 import MediaCarousel from "@/components/MediaCarousel";
+import SearchForm from "@/components/SearchForm";
+import SearchResults from "@/components/SearchResults";
 import { getTrending } from "@/services/api";
 
-export default async function Home() {
+export default async function Home({
+  searchParams,
+}: Readonly<{
+  searchParams: { q: string; page: string };
+}>) {
   const trendingMovie = await getTrending("movie");
   const trendingTv = await getTrending("tv");
 
   return (
     <main>
       <Header />
-      <div className="my-global px-global space-y-5">
-        <MediaCarousel title="Filmes em Alta" items={trendingMovie.results} />
-        <MediaCarousel title="TV Shows em Alta" items={trendingTv.results} />
-      </div>
+      <SearchForm query={searchParams.q} />
+      {searchParams.q ? (
+        <SearchResults query={searchParams.q} page={searchParams.page} />
+      ) : (
+        <div className="my-global px-global space-y-5">
+          <MediaCarousel title="Filmes em Alta" items={trendingMovie.results} />
+          <MediaCarousel title="TV Shows em Alta" items={trendingTv.results} />
+        </div>
+      )}
     </main>
   );
 }
